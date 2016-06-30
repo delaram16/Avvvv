@@ -77,10 +77,10 @@ local function instagramMedia(msg, query)
 end
 local function run(msg, matches)
 
-if matches[1] == "insta" and not matches[3] then
+if matches[1] == "instagram" and not matches[3] then
     return instagramUser(msg,matches[2])
 end
-if matches[1] == "insta" and matches[3] then
+if matches[1] == "instagram" and matches[3] then
     local media = matches[3]
     if string.match(media , '/') then media = media:gsub("/", "") end
     return instagramMedia(msg,media)
@@ -88,11 +88,11 @@ end
 end
 return {
    patterns = {
-   "^[/!]([Ii]nsta) ([Hh]ttps://www.instagram.com/p/)([^%s]+)$",
-   "^[/!]([Ii]nsta) ([Hh]ttps://instagram.com/p/)([^%s]+)$",
-   "^[/!]([Ii]nsta) ([Hh]ttp://www.instagram.com/p/)([^%s]+)$",
-   "^[/!]([Ii]nsta) ([Hh]ttp://instagram.com/p/)([^%s]+)$",
-   "^[/!]([Ii]nsta) ([^%s]+)$",
+   "^[/!]([Ii]nstagram) ([Hh]ttps://www.instagram.com/p/)([^%s]+)$",
+   "^[/!]([Ii]nstagram) ([Hh]ttps://instagram.com/p/)([^%s]+)$",
+   "^[/!]([Ii]nstagram) ([Hh]ttp://www.instagram.com/p/)([^%s]+)$",
+   "^[/!]([Ii]nstagram) ([Hh]ttp://instagram.com/p/)([^%s]+)$",
+   "^[/!]([Ii]nstagram) ([^%s]+)$",
    },
    run = run
 }
